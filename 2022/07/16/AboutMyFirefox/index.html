@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>关于我的Firefox配置 · ClaretWheel1481</title><meta name="description" content="Firefox我最喜欢的地方就是它的开源与高度自定义；以下则是我对Firefox进行的部分配置。
+插件：我最喜欢且常用的插件是 ublock Origin 与 Dark Reader。
+
+ublock Origin
+
+Firefox自带的跟踪保护，却没有广告拦截功能，而 ublock Origin "><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.2.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">ClaretWheel1481</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a target="_blank" rel="noopener" href="https://www.caicai.me"> CaiCai </a><span>&</span><a target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li><li><a href="/links">友链</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>关于我的Firefox配置</a></h3></div><div class="post-content"><p>Firefox我最喜欢的地方就是它的开源与高度自定义；以下则是我对Firefox进行的部分配置。</p>
+<h2 id="插件："><a href="#插件：" class="headerlink" title="插件："></a>插件：</h2><p>我最喜欢且常用的插件是 <em>ublock Origin</em> 与 <em>Dark Reader</em>。</p>
+<ul>
+<li><em>ublock Origin</em></li>
+</ul>
+<p>Firefox自带的跟踪保护，却没有广告拦截功能，而 <em>ublock Origin</em> 恰好弥补了这个缺点，它体积小还支持导入规则或自定义，优化加载网页的速度。</p>
+<p>附上整合了乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX’sAnnoyance的规则：</p>
+<p><code>https://halflife.coding.net/p/list/d/list/git/raw/master/ad.txt</code></p>
+<ul>
+<li><em>Dark Reader</em></li>
+</ul>
+<p>Dark Reader让我在浏览网页时，减轻了我的眼睛负担。</p>
+<p>我时常在深夜开着一盏台灯浏览密密麻麻的资料，系统主题为深色，而打开的部分网页却是白色，非常瞎眼，而这个插件则可以动态识别网页元素并修改为合适的深色，不仅如此还可以修改网页字体并加粗；还有很多功能都非常实用，也不会吃很多性能，值得推荐。</p>
+<p><img src="/images/blogimages/darkreader.png" alt="图片展示"></p>
+<h2 id="About-config："><a href="#About-config：" class="headerlink" title="About:config："></a>About:config：</h2><ul>
+<li><em>页面滚动</em></li>
+</ul>
+<p>我一直觉得Firefox的页面滚动异常让我不舒服，隔壁Edge的页面滚动轻快但是油腻，直到我在Firefox的配置中发现了一个选项，打开后让Firefox实现了拥有Edge的轻快还没了Edge的油腻。</p>
+<p>在地址栏中输入about:config后，再搜索：</p>
+<p><code>general.smoothScroll.msdPhysics.enabled</code></p>
+<p>将 <em>False</em> 修改为 <em>True</em> </p>
+<p>之后用滚轮滚动页面会发现十分跟手！</p>
+<ul>
+<li><em>字体渲染</em></li>
+</ul>
+<p>Firefox渲染出的字体在1080p下比Chromium系渲染出的字体要粗且更清晰，但是我还想更好，于是经过我的不断搜索挖掘中发现：</p>
+<p>在地址栏中输入about:config后，再搜索：</p>
+<p><code>gfx.font_rendering.cleartype_params.rendering_mode</code></p>
+<p>将数值改为 <em>5</em></p>
+<p><code>0=default，1=aliased，2=GDI Classic，3=GDI Natural，4=Natural，5=Natural Symmetric</code></p>
+<p>你会发现字体渲染与Linux平台的Firefox中字体十分相似，对我而言看着更舒服。</p>
+<p>如果想要更好的效果，可以尝试搭配<a target="_blank" rel="noopener" href="https://github.com/snowie2000/mactype">Mactype</a>实现“Mac”的字体渲染。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2022-07-16</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,http://example.com/2022/07/16/AboutMyFirefox/,ClaretWheel1481,关于我的Firefox配置,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2022/07/15/ManualSelectionTool094/" title="Steam饰品搬砖手动选品利润计算器 v0.9.4 发布">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
