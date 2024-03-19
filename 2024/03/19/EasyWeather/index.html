@@ -16,21 +16,24 @@
   <meta name="author" content="ClaretWheel1481">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Linux Kernel进程管理进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中，一个进程仅仅包">
+    <meta name="description" content="EasyWeather v1.0.10EasyWeather采用Flutter为基础代码实现Material Design 3风格的天气预报软件。 天气数据均来源于高德开放平台与和风天气开放平台。 目录 ⚠️警告 ➡️功能 🍜用法 📷预览 📥下载 📝许可证  ⚠️警告❗️仅适用于中国大陆与港澳台用户。 ❗️仅适用于系统语言为简体中文。 ❗️仅适用于搭载Android 9.0及以上的手机。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Kernel">
-<meta property="og:url" content="http://blog.claret.space/2024/03/19/LinuxKernel/index.html">
+<meta property="og:title" content="EasyWeather Final Edition">
+<meta property="og:url" content="http://blog.claret.space/2024/03/19/EasyWeather/index.html">
 <meta property="og:site_name" content="ClaretWheel1481">
-<meta property="og:description" content="Linux Kernel进程管理进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中，一个进程仅仅包">
+<meta property="og:description" content="EasyWeather v1.0.10EasyWeather采用Flutter为基础代码实现Material Design 3风格的天气预报软件。 天气数据均来源于高德开放平台与和风天气开放平台。 目录 ⚠️警告 ➡️功能 🍜用法 📷预览 📥下载 📝许可证  ⚠️警告❗️仅适用于中国大陆与港澳台用户。 ❗️仅适用于系统语言为简体中文。 ❗️仅适用于搭载Android 9.0及以上的手机。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-19T03:38:24.667Z">
-<meta property="article:modified_time" content="2024-03-19T06:16:05.891Z">
+<meta property="og:image" content="http://blog.claret.space/images/blogimages/Sample_Dark.png">
+<meta property="og:image" content="http://blog.claret.space/images/blogimages/Sample_Light.png">
+<meta property="article:published_time" content="2024-03-19T06:16:23.024Z">
+<meta property="article:modified_time" content="2024-03-19T06:22:35.415Z">
 <meta property="article:author" content="ClaretWheel1481">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://blog.claret.space/images/blogimages/Sample_Dark.png">
   
   
   
-  <title>Linux Kernel - ClaretWheel1481</title>
+  <title>EasyWeather Final Edition - ClaretWheel1481</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -172,7 +175,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux Kernel"></span>
+            <span id="subtitle" data-typed-text="EasyWeather Final Edition"></span>
           
         </div>
 
@@ -183,8 +186,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-19 11:38" pubdate>
-          2024年3月19日 中午
+        <time datetime="2024-03-19 14:16" pubdate>
+          2024年3月19日 下午
         </time>
       </span>
     
@@ -195,7 +198,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          191 字
+          337 字
         
       </span>
     
@@ -206,7 +209,7 @@
         
         
         
-          2 分钟
+          3 分钟
         
       </span>
     
@@ -243,15 +246,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Linux Kernel</h1>
+            <h1 id="seo-header">EasyWeather Final Edition</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h1><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。</p>
-<p><strong>进程就是正在执行的程序的代码的实时结果。</strong></p>
-<p>线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。</p>
-<p>内核调度的对象是线程，而在传统Unix系统中，<strong>一个进程仅仅包含一个线程</strong>，对于Linux而言，线程只是一种特殊的进程。</p>
+                <h1 id="EasyWeather-v1-0-10"><a href="#EasyWeather-v1-0-10" class="headerlink" title="EasyWeather v1.0.10"></a>EasyWeather v1.0.10</h1><p>EasyWeather采用Flutter为基础代码实现Material Design 3风格的天气预报软件。</p>
+<p>天气数据均来源于高德开放平台与和风天气开放平台。</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="#%E8%AD%A6%E5%91%8A">⚠️警告</a></li>
+<li><a href="#%E5%8A%9F%E8%83%BD">➡️功能</a></li>
+<li><a href="#%E7%94%A8%E6%B3%95">🍜用法</a></li>
+<li><a href="#%E9%A2%84%E8%A7%88">📷预览</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD">📥下载</a></li>
+<li><a href="#%E8%AE%B8%E5%8F%AF%E8%AF%81">📝许可证</a></li>
+</ul>
+<h4 id="⚠️警告"><a href="#⚠️警告" class="headerlink" title="⚠️警告"></a>⚠️警告</h4><p>❗️仅适用于中国大陆与港澳台用户。</p>
+<p>❗️仅适用于系统语言为简体中文。</p>
+<p>❗️仅适用于搭载Android 9.0及以上的手机。</p>
+<h4 id="➡️功能"><a href="#➡️功能" class="headerlink" title="➡️功能"></a>➡️功能</h4><p>☑️<br>目前天气查询<br>☑️<br>可存储的城市列表<br>☑️<br>未来三天的天气预报<br>☑️<br>可跟随天气变化的天气图标<br>☑️<br>深色模式（跟随系统设置）<br>☑️<br>危险天气预警<br>☑️<br>可跟随天气变化的天气背景<br>☑️<br>空气质量<br>☑️<br>天气指数</p>
+<h4 id="🍜用法"><a href="#🍜用法" class="headerlink" title="🍜用法"></a>🍜用法</h4><ul>
+<li>右上角可进行搜索城市（仅限于中文），搜索成功后会显示对应结果，选择想要的城市，单击后将返回主界面，显示天气情况并将其保存至城市列表中。</li>
+<li>右上角可进行定位（需要定位权限），若定位成功则自动显示所在城市的天气情况，并保存至城市列表中。</li>
+<li>右上角可选择已保存的城市，单击城市可查看城市的天气情况，长按可删除城市。</li>
+<li>最顶部下拉可刷新天气情况。</li>
+</ul>
+<h4 id="📷预览"><a href="#📷预览" class="headerlink" title="📷预览"></a>📷预览</h4><p><img src="/images/blogimages/Sample_Dark.png" srcset="/images/loading.gif" lazyload alt="图片展示"></p>
+<p><img src="/images/blogimages/Sample_Light.png" srcset="/images/loading.gif" lazyload alt="图片展示"></p>
+<h4 id="📥下载"><a href="#📥下载" class="headerlink" title="📥下载"></a>📥下载</h4><p><a target="_blank" rel="noopener" href="https://github.com/ClaretWheel1481/easyweather/releases/latest">点击此处</a></p>
+<h4 id="📄许可证"><a href="#📄许可证" class="headerlink" title="📄许可证"></a>📄许可证</h4><p><a href="LICENSE">MIT</a> © Huang LinXing</p>
 
                 
               </div>
@@ -269,8 +292,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux Kernel</div>
-      <div>http://blog.claret.space/2024/03/19/LinuxKernel/</div>
+      <div>EasyWeather Final Edition</div>
+      <div>http://blog.claret.space/2024/03/19/EasyWeather/</div>
     </div>
     <div class="license-meta">
       
@@ -314,18 +337,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/19/EasyWeather/" title="EasyWeather Final Edition">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">EasyWeather Final Edition</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/07/C++ThreadNotes_Thread/" title="C++ Linux服务器多线程开发 - C++11线程类(1)">
-                        <span class="hidden-mobile">C++ Linux服务器多线程开发 - C++11线程类(1)</span>
+                      <a href="/2024/03/19/LinuxKernel/" title="Linux Kernel">
+                        <span class="hidden-mobile">Linux Kernel</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
