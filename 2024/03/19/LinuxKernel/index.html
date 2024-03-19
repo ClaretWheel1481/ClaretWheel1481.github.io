@@ -16,21 +16,21 @@
   <meta name="author" content="ClaretWheel1481">
   <meta name="keywords" content="">
   
-    <meta name="description" content="栈Stack先进后出，当想访问栈内某一元素时，必须将其顶部的元素都弹出出栈后，才能访问该元素。 栈Stack使用方法首先导入库与定义12345678910#include &lt;iostream&gt;#include &lt;stack&gt;using namespace std;int main()&amp;#123;    stack&lt;type_name&gt; name;    &#x2F;&#x2F;ty">
+    <meta name="description" content="Linux Kernel进程管理进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中，一个进程仅仅包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ Stack、Queue使用方法">
-<meta property="og:url" content="http://blog.claret.space/2023/04/11/C++StackQueueNotes/index.html">
+<meta property="og:title" content="Linux Kernel">
+<meta property="og:url" content="http://blog.claret.space/2024/03/19/LinuxKernel/index.html">
 <meta property="og:site_name" content="ClaretWheel1481">
-<meta property="og:description" content="栈Stack先进后出，当想访问栈内某一元素时，必须将其顶部的元素都弹出出栈后，才能访问该元素。 栈Stack使用方法首先导入库与定义12345678910#include &lt;iostream&gt;#include &lt;stack&gt;using namespace std;int main()&amp;#123;    stack&lt;type_name&gt; name;    &#x2F;&#x2F;ty">
+<meta property="og:description" content="Linux Kernel进程管理进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中，一个进程仅仅包">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-11T12:28:22.809Z">
-<meta property="article:modified_time" content="2024-03-19T03:40:44.124Z">
+<meta property="article:published_time" content="2024-03-19T03:38:24.667Z">
+<meta property="article:modified_time" content="2024-03-19T03:39:31.010Z">
 <meta property="article:author" content="ClaretWheel1481">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>C++ Stack、Queue使用方法 - ClaretWheel1481</title>
+  <title>Linux Kernel - ClaretWheel1481</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -172,7 +172,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C++ Stack、Queue使用方法"></span>
+            <span id="subtitle" data-typed-text="Linux Kernel"></span>
           
         </div>
 
@@ -183,8 +183,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-11 20:28" pubdate>
-          2023年4月11日 晚上
+        <time datetime="2024-03-19 11:38" pubdate>
+          2024年3月19日 中午
         </time>
       </span>
     
@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          196 字
+          191 字
         
       </span>
     
@@ -243,15 +243,15 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C++ Stack、Queue使用方法</h1>
+            <h1 id="seo-header">Linux Kernel</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="栈Stack"><a href="#栈Stack" class="headerlink" title="栈Stack"></a>栈Stack</h1><p>先进后出，当想访问栈内某一元素时，必须将其顶部的元素都弹出出栈后，才能访问该元素。</p>
-<h1 id="栈Stack使用方法"><a href="#栈Stack使用方法" class="headerlink" title="栈Stack使用方法"></a>栈Stack使用方法</h1><h5 id="首先导入库与定义"><a href="#首先导入库与定义" class="headerlink" title="首先导入库与定义"></a>首先导入库与定义</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stack&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    stack&lt;type_name&gt; name;<br>    <span class="hljs-comment">//type_name可以是任何基本类型、结构体</span><br>    <span class="hljs-comment">//也可以是STL标准容器如queue、set、vector</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h5 id="常用的使用方法"><a href="#常用的使用方法" class="headerlink" title="常用的使用方法"></a>常用的使用方法</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//移除栈顶元素</span><br>stack.<span class="hljs-built_in">pop</span>();<br><span class="hljs-comment">//返回是否为空的布尔值</span><br>stack.<span class="hljs-built_in">empty</span>();<br><span class="hljs-comment">//栈顶添加元素,*代指元素</span><br>stack.<span class="hljs-built_in">push</span>(*);<br><span class="hljs-comment">//返回stack中元素的个数</span><br>stack.<span class="hljs-built_in">size</span>();<br><span class="hljs-comment">//返回栈顶元素</span><br>stack.<span class="hljs-built_in">top</span>();<br></code></pre></td></tr></table></figure>
-<h1 id="队列Queue"><a href="#队列Queue" class="headerlink" title="队列Queue"></a>队列Queue</h1><p>先进入队列的先出去，后进入队列的后出去。必须从队尾插入新元素，队列中的元素只能从队首出。</p>
+                <h1 id="Linux-Kernel"><a href="#Linux-Kernel" class="headerlink" title="Linux Kernel"></a>Linux Kernel</h1><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><p>进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。</p>
+<p><strong>进程就是正在执行的程序的代码的实时结果。</strong></p>
+<p>线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。</p>
+<p>内核调度的对象是线程，而在传统Unix系统中，<strong>一个进程仅仅包含一个线程</strong>，对于Linux而言，线程只是一种特殊的进程。</p>
 
                 
               </div>
@@ -269,8 +269,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C++ Stack、Queue使用方法</div>
-      <div>http://blog.claret.space/2023/04/11/C++StackQueueNotes/</div>
+      <div>Linux Kernel</div>
+      <div>http://blog.claret.space/2024/03/19/LinuxKernel/</div>
     </div>
     <div class="license-meta">
       
@@ -282,7 +282,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月11日</div>
+          <div>2024年3月19日</div>
         </div>
       
       
@@ -314,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/24/C++ThreadNotes/" title="C++ Linux服务器多线程开发 - POSIX">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ Linux服务器多线程开发 - POSIX</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/08/C++MapSetNotes/" title="C++ Set、Map使用方法">
-                        <span class="hidden-mobile">C++ Set、Map使用方法</span>
+                      <a href="/2024/03/07/C++ThreadNotes_Thread/" title="C++ Linux服务器多线程开发 - C++11线程类(1)">
+                        <span class="hidden-mobile">C++ Linux服务器多线程开发 - C++11线程类(1)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
