@@ -16,15 +16,15 @@
   <meta name="author" content="ClaretWheel1481">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Linux Kernel Notes 进程管理  进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统">
+    <meta name="description" content="Linux Kernel Notes进程管理进程进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Kernel Notes">
 <meta property="og:url" content="http://blog.claret.space/2024/03/19/LinuxKernel/index.html">
 <meta property="og:site_name" content="ClaretWheel1481">
-<meta property="og:description" content="Linux Kernel Notes 进程管理  进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统">
+<meta property="og:description" content="Linux Kernel Notes进程管理进程进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。 进程就是正在执行的程序的代码的实时结果。 线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。 内核调度的对象是线程，而在传统Unix系统中">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-19T03:38:24.667Z">
-<meta property="article:modified_time" content="2024-03-19T06:26:44.928Z">
+<meta property="article:modified_time" content="2024-03-21T06:24:54.648Z">
 <meta property="article:author" content="ClaretWheel1481">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -195,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          191 字
+          556 字
         
       </span>
     
@@ -206,7 +206,7 @@
         
         
         
-          2 分钟
+          5 分钟
         
       </span>
     
@@ -248,13 +248,21 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Linux-Kernel-Notes"><a href="#Linux-Kernel-Notes" class="headerlink" title="Linux Kernel Notes"></a>Linux Kernel Notes</h1><ul>
-<li><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3></li>
-</ul>
-<p>进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。</p>
+                <h1 id="Linux-Kernel-Notes"><a href="#Linux-Kernel-Notes" class="headerlink" title="Linux Kernel Notes"></a>Linux Kernel Notes</h1><h3 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h3><h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><p>进程不仅仅局限于一段可执行的程序代码，还包含其他资源，如挂起的信号，内核的数据，处理器状态，一个或多个具有内存映射的内存地址空间以及一个或多个执行线程，存放全局变量的数据段等。</p>
 <p><strong>进程就是正在执行的程序的代码的实时结果。</strong></p>
-<p>线程是指进程中活动的对象，每个线程都有一个独立的程序计数器、进程栈还有一组进程寄存器。</p>
+<p>线程是指进程中活动的对象，每个线程都有一个独立的<strong>程序计数器</strong>、<strong>进程栈</strong>还有一组<strong>进程寄存器</strong>。</p>
 <p>内核调度的对象是线程，而在传统Unix系统中，<strong>一个进程仅仅包含一个线程</strong>，对于Linux而言，线程只是一种特殊的进程。</p>
+<p>进程在创建时变开始存活，这是调用<strong>fork()<strong>函数的结果，该函数通过复制一个现有进程来创建新的进程。调用</strong>fork()<strong>函数的进程被称为 <strong>父进程</strong>，而新产生的进程则为 <strong>子进程</strong>。 <strong>folk()<strong>系统调用从内核返回两次：一次回到</strong>父进程</strong>，另一次回到新产生的</strong>子进程</strong>。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>在现代Linux中，folk()其实是clone调用实现的。</p>
+</blockquote>
+<p>在一般情况下，创建新的进程都是为了立即执行新的、不同的程序，而接着调用<strong>exec()<strong>来创建新的地址空间，将新的程序载入其中。最后程序再通过</strong>exit()<strong>退出执行，</strong>exit()<strong>会</strong>终结进程</strong>并且<strong>释放占用的资源</strong>，父进程可以通过**wait4()<strong>查询子进程是否终结。这使得进程拥有了等待特定进程执行完毕的能力，进程退出执行后被设置为僵死状态，直到它的父进程调用</strong>wait()<strong>或</strong>waitpid()**为止。</p>
+<blockquote>
+<p>[!NOTE]</p>
+<p>wait()、waitpid()、wait4()这些函数虽然有细微的语意差别，但是所有函数都返回关于终止进程的状态。</p>
+</blockquote>
+<h4 id="进程描述符及任务结构"><a href="#进程描述符及任务结构" class="headerlink" title="进程描述符及任务结构"></a>进程描述符及任务结构</h4><p>Linux内核将进程的列表存放在 <strong>TaskList</strong>中，它是一个双向循环链表。链表的每一项类型都为 <strong>task_struct</strong>、称为进程描述符的结构，且被定义于 **&lt;linux&#x2F;sched.h&gt;**文件中。</p>
 
                 
               </div>
